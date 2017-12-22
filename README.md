@@ -47,7 +47,7 @@ collapse by mirroring or folding to one of these 4 possibilities:
 ## All Possible Endings
 
 ```
-           NUMBER PEGS LEFT:   1      2       3       4       5      6    7    8  9  10
+        NUMBER OF PEGS LEFT:   1      2       3       4       5      6    7    8  9  10
 Starting empty A 568630 games [29760, 139614, 259578, 123664, 14844, 844, 324, 2, 0, 0]
 01: DBA,FED,ACF,GDB,JFC,LHE,MIF,BEI,CFJ,OJF,FIM,NML,KLM
 08: FCA,MIF,GHI,JIH,DHM,ABD
