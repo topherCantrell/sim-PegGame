@@ -5,6 +5,10 @@ extended family, what better way to pass the time than with that triangle of woo
 
 ![https://github.com/topherCantrell/PegGame/blob/master/art/MovesFromD.jpg](https://github.com/topherCantrell/PegGame/blob/master/art/MovesFromD.jpg)
 
+The board has 15 holes I am labeling 'A' through 'O'. A 'move' is a series of 3 holes in a line. The diagram above
+shows all four moves that begin with hole 'D'. It is easy enough to enumerate all possible moves on the board. There
+are 36 different moves on the board:
+
 ```java
 
     //       A
@@ -33,3 +37,7 @@ extended family, what better way to pass the time than with that triangle of woo
     
 ```
 
+## Starting Configuration
+
+The game begins with one empty hole. There are 15 different choices for the first empty hole, but they all
+collapse by mirroring or folding to one of these 4 possibilities:
