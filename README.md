@@ -5,7 +5,7 @@ extended family, what better way to pass the time than with that triangle of woo
 
 ![]()
 
-{{{java
+```java
 
     //       A
     //      B C
@@ -31,5 +31,5 @@ extended family, what better way to pass the time than with that triangle of woo
         "ONM","OJF"
     };
     
-}}}
+```
 
