@@ -41,3 +41,5 @@ are 36 different moves on the board:
 
 The game begins with one empty hole. There are 15 different choices for the first empty hole, but they all
 collapse by mirroring or folding to one of these 4 possibilities:
+
+![https://github.com/topherCantrell/PegGame/blob/master/art/Starts.jpg](https://github.com/topherCantrell/PegGame/blob/master/art/Starts.jpg)
