@@ -43,3 +43,26 @@ The game begins with one empty hole. There are 15 different choices for the firs
 collapse by mirroring or folding to one of these 4 possibilities:
 
 ![https://github.com/topherCantrell/PegGame/blob/master/art/Starts.jpg](https://github.com/topherCantrell/PegGame/blob/master/art/Starts.jpg)
+
+## All Possible Endings
+
+```
+Starting empty A 568630 games [0, 29760, 139614, 259578, 123664, 14844, 844, 324, 2, 0, 0]
+01: DBA,FED,ACF,GDB,JFC,LHE,MIF,BEI,CFJ,OJF,FIM,NML,KLM
+08: FCA,MIF,GHI,JIH,DHM,ABD
+
+Starting empty B 294543 games [0, 14880, 70481, 133919, 65832, 8740, 522, 168, 1, 0, 0]
+01: GDB,ABD,IEB,BDG,KGD,LHE,CEH,JFC,NML,LHE,DEF,CFJ,OJF
+08: GDB,FED,NIE,BEI,MIF,KLM
+
+Starting empty D 1149568 games [0, 85258, 290954, 510556, 233060, 27878, 1458, 404, 0, 0, 0]
+01: ABD,FCA,DEF,JFC,ACF,MHD,GDB,ONM,LMN,NIE,FED,BDG,KGD
+07: MHD,ONM,LMN,JIH,GHI,CEH,IHG
+
+Starting empty E 137846 games [0, 1550, 20686, 62736, 46728, 5688, 374, 82, 0, 0, 2]
+01: LHE,JIH,BEI,CFJ,GDB,ABD,NML,DHM,LMN,OJF,FIM,NML,KLM
+10: NIE,BEI,LHE,IEB
+```
+
+
+

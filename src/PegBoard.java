@@ -114,7 +114,9 @@ public class PegBoard implements Cloneable
     
     public String toString()
     {
-        String ret = ""+getNumberOfPegs()+": ";
+    	String n = ""+getNumberOfPegs();
+    	if(n.length()<2) n="0"+n;
+        String ret = n+": ";
         for(int x=0;x<moves.size();++x) {
             ret = ret + moves.get(x);
             if(x!=(moves.size()-1)) {
@@ -124,10 +126,10 @@ public class PegBoard implements Cloneable
         return ret;
     }
     
-    public static void runBoard(PegBoard p) throws Exception 
+    public static void runBoard(PegBoard p, List<String> ends) throws Exception 
     {        
         if(p.getPossibleMove() == null) {
-            System.out.println(p);
+        	ends.add(p.toString());            
             return;
         }
         String [] pm = p.getValidMoves();
@@ -135,13 +137,19 @@ public class PegBoard implements Cloneable
             if(p.isMoveValid(pm[x])) {
                 PegBoard nb = (PegBoard)p.clone();
                 nb.makeMove(pm[x]);
-                runBoard(nb);
+                runBoard(nb,ends);
             }
         }        
     }
     
     public static void main(String [] args) throws Exception
     {       
+    	
+    	if(args.length==0) {
+    		String [] targs = {"E"};
+    		args = targs;
+    	}
+    	
         if(args.length!=1 || args[0].length()<1 || 
           args[0].charAt(0)<'A' || args[0].charAt(0)>'O') {
             System.out.println("Arguments: MissingPeg position (A-O)");
@@ -150,7 +158,27 @@ public class PegBoard implements Cloneable
         
         int mp = args[0].charAt(0)-'A';
         PegBoard p = new PegBoard(mp);
-        runBoard(p);
+        List<String> ends = new ArrayList<String>();
+        runBoard(p,ends);
+        
+        printStats(args[0],ends);        
+        
     }
+	private static void printStats(String mp, List<String> ends) {
+		Collections.sort(ends);
+		
+		int [] nums = new int[11];
+		
+		for(String s : ends) {
+			int i = s.indexOf(":");
+			int a = Integer.parseInt(s.substring(0, i));
+			++nums[a];
+		}
+        
+        System.out.println("Starting empty "+mp+" "+ends.size()+" endings "+Arrays.toString(nums));
+        System.out.println(ends.get(0));
+        System.out.println(ends.get(ends.size()-1));
+		
+	}
     
 }
