@@ -34,9 +34,8 @@ public class PegBoard implements Cloneable
     // Subclass this to provide different types of boards and associated moves
     protected int getBoardSize() {return 15;}    
     protected String [] getValidMoves() {return MOVES;}
-    //
     
-    public PegBoard(int missing)
+    public PegBoard(int oneMissing)
     {
         board = new boolean[getBoardSize()];
         moves = new ArrayList<String>();
@@ -44,28 +43,28 @@ public class PegBoard implements Cloneable
         for(int x=0;x<board.length;++x) {
             board[x] = true;
         }
-        board[missing] = false;
+        
+        board[oneMissing] = false;
     }
     
-    public Object clone() throws CloneNotSupportedException
+    public PegBoard(PegBoard other)
     {
-        PegBoard ob = (PegBoard)super.clone();
-        ob.board = new boolean[getBoardSize()];
+        board = new boolean[other.board.length];
         for(int x=0;x<board.length;++x) {
-            ob.board[x] = board[x];
+            board[x] = other.board[x];
         }        
-        ob.moves = new ArrayList<String>();        
-        for(int x=0;x<moves.size();++x) {
-            ob.moves.add(moves.get(x));
-        }
-        return ob;
+        moves = new ArrayList<String>(other.moves.size());    
+        for(String s : other.moves) {
+        	moves.add(s);
+        }        
     }
     
     public boolean isMoveValid(String m)
     {
-        if(m.length()<3) {
-            return false;
-        }
+    	if(m.length()!=3) {
+    		throw new RuntimeException("Should be 3");
+    	}
+        
         int a = m.charAt(0)-'A';
         int b = m.charAt(1)-'A';
         int c = m.charAt(2)-'A';
@@ -126,7 +125,7 @@ public class PegBoard implements Cloneable
         return ret;
     }
     
-    public static void runBoard(PegBoard p, List<String> ends) throws Exception 
+    public static void runBoard(PegBoard p, List<String> ends)
     {        
         if(p.getPossibleMove() == null) {
         	ends.add(p.toString());            
@@ -135,36 +134,14 @@ public class PegBoard implements Cloneable
         String [] pm = p.getValidMoves();
         for(int x=0;x<pm.length;++x) {
             if(p.isMoveValid(pm[x])) {
-                PegBoard nb = (PegBoard)p.clone();
+                PegBoard nb = new PegBoard(p);
                 nb.makeMove(pm[x]);
                 runBoard(nb,ends);
             }
         }        
     }
     
-    public static void main(String [] args) throws Exception
-    {       
-    	
-    	if(args.length==0) {
-    		String [] targs = {"E"};
-    		args = targs;
-    	}
-    	
-        if(args.length!=1 || args[0].length()<1 || 
-          args[0].charAt(0)<'A' || args[0].charAt(0)>'O') {
-            System.out.println("Arguments: MissingPeg position (A-O)");
-            return;
-        }
-        
-        int mp = args[0].charAt(0)-'A';
-        PegBoard p = new PegBoard(mp);
-        List<String> ends = new ArrayList<String>();
-        runBoard(p,ends);
-        
-        printStats(args[0],ends);        
-        
-    }
-	private static void printStats(String mp, List<String> ends) {
+    private static void printStats(char mc, List<String> ends) {
 		Collections.sort(ends);
 		
 		int [] nums = new int[11];
@@ -175,10 +152,32 @@ public class PegBoard implements Cloneable
 			++nums[a];
 		}
         
-        System.out.println("Starting empty "+mp+" "+ends.size()+" endings "+Arrays.toString(nums));
+        System.out.println("Starting empty "+mc+" "+ends.size()+" endings "+Arrays.toString(nums));
         System.out.println(ends.get(0));
         System.out.println(ends.get(ends.size()-1));
 		
 	}
+    
+    private static void doRun(char mc) {
+    	int mp = mc-'A';
+        PegBoard p = new PegBoard(mp);
+        List<String> ends = new ArrayList<String>();
+        runBoard(p,ends);
+        
+        printStats(mc,ends);       
+    }
+    
+    // TODO this is really, really old code. Revisit this to make sure it is doing what you think.
+    
+    public static void main(String [] args) 
+    {       
+    	
+    	doRun('A');
+    	doRun('B');
+    	doRun('D');
+    	doRun('E');         
+        
+    }
+	
     
 }
