@@ -33,7 +33,7 @@ public class PegBoard implements Cloneable
     
     // Subclass this to provide different types of boards and associated moves
     protected int getBoardSize() {return 15;}    
-    protected String [] getValidMoves() {return MOVES;}
+    protected String [] getMoves() {return MOVES;}
     
     public PegBoard(int oneMissing)
     {
@@ -60,11 +60,7 @@ public class PegBoard implements Cloneable
     }
     
     public boolean isMoveValid(String m)
-    {
-    	if(m.length()!=3) {
-    		throw new RuntimeException("Should be 3");
-    	}
-        
+    {    	        
         int a = m.charAt(0)-'A';
         int b = m.charAt(1)-'A';
         int c = m.charAt(2)-'A';
@@ -74,15 +70,15 @@ public class PegBoard implements Cloneable
         return false;
     }
     
-    public String getPossibleMove()
+    public boolean getPossibleMove()
     {  
-        String [] validMoves = getValidMoves();
+        String [] validMoves = getMoves();
         for(int x=0;x<validMoves.length;++x) {
             if(isMoveValid(validMoves[x])) {
-                return validMoves[x];
+                return true;
             }
         }
-        return null;
+        return false;
     }
     
     public boolean makeMove(String m)
@@ -127,11 +123,12 @@ public class PegBoard implements Cloneable
     
     public static void runBoard(PegBoard p, List<String> ends)
     {        
-        if(p.getPossibleMove() == null) {
+        if(!p.getPossibleMove()) {
         	ends.add(p.toString());            
             return;
         }
-        String [] pm = p.getValidMoves();
+        
+        String [] pm = p.getMoves();
         for(int x=0;x<pm.length;++x) {
             if(p.isMoveValid(pm[x])) {
                 PegBoard nb = new PegBoard(p);
