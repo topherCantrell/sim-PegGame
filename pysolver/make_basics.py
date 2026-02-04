@@ -6,20 +6,12 @@ Stats include:
     - for each starting hole, how many games end with N pegs left (N=1..10)
 """
 
-EXAMPLES = {
-
-}
-
 def end_of_game(brd, state, end_counts):    
     count = brd.count(1)    
     if count not in end_counts:
-        end_counts[count] = 1
+        end_counts[count] = [1, state]
     else:
-        end_counts[count] += 1
-
-    numpegs = brd.count(1)
-    if numpegs not in EXAMPLES:
-        EXAMPLES[numpegs] = state
+        end_counts[count][0] += 1
 
 def solve_board(board, end_counts, state):    
     made_move = False
@@ -51,5 +43,3 @@ def solve_all_boards():
 
 stats = solve_all_boards()
 pegs.save_basics(stats)
-
-print(EXAMPLES)

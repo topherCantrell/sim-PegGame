@@ -107,6 +107,61 @@ with ten. The example game above ends up like this (dots are empty holes):
 A . C . E
 ```
 
+Below are the statistics for each starting hole. I considered rotation and mirroring here to reduce the size of the
+data.
+
+All games that end with 10 pegs require the start hole to be in the middle (4, 7 or 8).
+
+```
+Total games from start hole 0 (rotations A and E): 568,630
+Pegs Left :  Number of games
+     1    :     29,760   Example: 0:30:53:05:61:92:B4:C5:18:29:E5:5C:DB:AC
+     2    :    139,614   Example: 0:30:53:05:61:92:B4:27:C3:16:A3:D4:35
+     3    :    259,578   Example: 0:30:53:05:61:86:92:A3:16:CA:A3:EC
+     4    :    123,664   Example: 0:30:53:05:61:86:A3:30:CA:EC:5E
+     5    :     14,844   Example: 0:30:53:05:61:92:B4:27:D4:72
+     6    :        844   Example: 0:30:53:61:03:B4:C5:50:E5
+     7    :        324   Example: 0:30:53:05:61:B4:97:4B
+     8    :          2   Example: 0:30:C3:97:68:5C:05
+
+Total games from start hole 1 (rotations and mirrors 2, 6, 9, B, D): 294,543
+Pegs Left :  Number of games
+     1    :     14,880   Example: 1:61:03:86:27:61:92:B4:18:DB:AC:C5:29:E5
+     2    :     70,481   Example: 1:61:03:50:35:92:05:C3:AC:DB:5C:BD:EC
+     3    :    133,919   Example: 1:61:03:50:35:92:05:B4:53:DB:AC:C5
+     4    :     65,832   Example: 1:61:03:50:35:86:92:05:A3:CA:EC
+     5    :      8,740   Example: 1:61:03:50:35:86:A3:CA:EC:5E
+     6    :        522   Example: 1:61:03:50:35:92:05:79:92
+     7    :        168   Example: 1:61:03:50:35:B4:97:4B
+     8    :          1   Example: 1:61:53:D4:18:C5:AC
+
+Total games from start hole 3 (rotations 5 and C): 1,149,568
+Pegs Left :  Number of games
+     1    :     85,258   Example: 3:03:50:35:92:05:C3:61:EC:BD:D4:53:16:A3
+     2    :    290,954   Example: 3:03:50:35:92:05:A3:B4:DB:5C:35:BD:EC
+     3    :    510,556   Example: 3:03:50:35:92:05:A3:B4:DB:4D:EC:BD
+     4    :    233,060   Example: 3:03:50:35:92:05:79:92:A3:CA:EC
+     5    :     27,878   Example: 3:03:50:35:92:05:B4:81:DB:AC
+     6    :      1,458   Example: 3:03:50:35:92:05:A3:86:3A
+     7    :        404   Example: 3:03:50:35:A3:CA:D4:72
+
+Total games from start hole 4 (rotations 7 and 8): 137,846
+Pegs Left :  Number of games
+     1    :      1,550   Example: 4:B4:97:18:29:61:03:DB:3C:BD:E5:5C:DB:AC
+     2    :     20,686   Example: 4:B4:27:92:05:30:DB:5C:BD:EC:C3:61:03
+     3    :     62,736   Example: 4:B4:27:92:05:30:A3:DB:3C:BD:5C:DB
+     4    :     46,728   Example: 4:B4:27:92:05:30:79:92:05:A3:DB
+     5    :      5,688   Example: 4:B4:27:92:05:30:A3:D4:4B:CA
+     6    :        374   Example: 4:B4:27:92:79:E5:29:CE:E5
+     7    :         82   Example: 4:B4:27:92:05:D4:72:50
+     8    :          0   Example: none
+     9    :          0   Example: none
+    10    :          2   Example: 4:B4:27:D4:72
+
+Confirming that rotations add up to total games:
+568630*3 + 294543*6 + 1149568*3 + 137846*3 = 7335390 total games
+```
+
 # Board Configurations
 
 That example game above leaves a cool pattern. It would be cooler still if the "C" hole were empty too. But that would
@@ -121,6 +176,8 @@ start with one empty hole.
 
 TODO lots more here
 
+
 All possible 1-peg endings are covered (15 possible).
+TODO does 1-peg solutions include all last holes from all starting holes
 
 Not just "final" boards.
