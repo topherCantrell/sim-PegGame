@@ -109,9 +109,18 @@ A . C . E
 
 # Board Configurations
 
+That example game above leaves a cool pattern. It would be cooler still if the "C" hole were empty too. But that would
+leave 9 pegs, and we know there is no game that ends in 9 pegs.
+
+What other cool patterns are not possible?
+
 You can think of the board as a 15-bit binary number with each bit representing a peg. There are thus 2**15 = 32,768
 possible states the board could be in. I talk board configuration by its binary-to-decimal number. Board 0 (all empty holes)
 is not valid since we must have at least one peg. And board 327676 (all filled holes) is not valid since we must
 start with one empty hole.
 
 TODO lots more here
+
+All possible 1-peg endings are covered (15 possible).
+
+Not just "final" boards.
