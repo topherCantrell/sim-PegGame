@@ -91,7 +91,7 @@ Nearly half the possible games end up with three pegs (3,302,124). About 22% of 
 22% with 4 pegs.
 
 There are 438,984 games that end in one peg. If you sat down at a board and picked a random starting hole and made
-random moves, you leave one peg about 6% of the time. 6 out of 100 games would be winners.
+random moves, you leave one peg about 6% of the time. 1 out of 17 games would be winners.
 
 Note that there are no games that end with 9 pegs remaining. And the real challenge is not to leave 1 peg -- playing
 at random gets you that 6% of the time.
