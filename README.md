@@ -176,6 +176,8 @@ start with one empty hole.
 
 TODO lots more here
 
+TODO other possible 10-peg endings that are not covered.
+
 All possible 1-peg endings are covered (15 possible).
 TODO does 1-peg solutions include all last holes from all starting holes
 
