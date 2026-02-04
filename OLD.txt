@@ -1,0 +1,130 @@
+# Peg Game
+
+What's the holidays without breakfast at Cracker Barrel? And while you are sitting there in awkward silence with
+extended family, what better way to pass the time than with that triangle of wood filled with golf tees.
+
+![](art/game.jpg)
+
+
+# The Model
+
+I modeled the board as 15 holes numbered in hexadecimal from 0 to E. Hole 0 is the top most hole then left to right top to
+bottom as you can see in the photo and here:
+
+```
+    0
+   1 2
+  3 4 5
+ 6 7 8 9
+A B C D E
+```
+
+A "move" is a series of 3 holes in a line. The move [3,1,0] means the peg in hole 3 jumps the peg in hole 1
+and ends up in hole 0, which was empty at the start of the move. Most holes only begin two moves. Hole 0,
+for instance, is the start of [0,1,3] and [0,2,5]. The holes in the middle on the outside (holes 3, 5, and C)
+are the starting point for four moves each. Hole 3, for instance, starts moves [3,1,0], [3,4,5], [3,7,C],
+and [3,6,A].
+
+I enumerated all 36 possible moves in my code (the holes are defined with decimal constants instead of hex):
+
+```python
+MOVES = [
+    [0, 1, 3], [0, 2, 5], 
+    [1, 4, 8], [1, 3, 6], 
+    [2, 4, 7], [2, 5, 9], 
+    [3, 1, 0], [3, 4, 5], [3, 7, 12], [3, 6, 10], 
+    [4, 8, 13], [4, 7, 11], 
+    [5, 2, 0], [5, 4, 3], [5, 8, 12], [5, 9, 14], 
+    [6, 3, 1], [6, 7, 8], 
+    [7, 4, 2], [7, 8, 9], 
+    [8, 7, 6], [8, 4, 1], 
+    [9, 5, 2], [9, 8, 7], 
+    [10, 6, 3], [10, 11, 12], 
+    [11, 7, 4], [11, 12, 13], 
+    [12, 11, 10], [12, 7, 3], [12, 8, 5], [12, 13, 14], 
+    [13, 12, 11], [13, 8, 4], 
+    [14, 13, 12], [14, 9, 5]
+]
+```
+
+# Starting Hole
+
+Every game begins with 14 pegs and one empty hole. You could leave a corner open: 0, A, or E. You can rotate the board
+and these are all essentially the same empty hole.
+
+Likewise, the outer middles are rotationally equivalent: 3, 5, and C. So are the inner holes 4, 7, and 8.
+
+In addition to rotating the board, you could play backwards (throgh a mirror). The remaining holes are thus equivalent:
+1, 2, 6, 9, B, D.
+
+My simulation does not reduce the game space with mirroring and/or rotation. In my simulation, there are 14 possible starting 
+holes, and all games that start with 0 are different from all games that start with E (for instance).
+
+![](art/starts.jpg)
+
+------------------------
+
+![](art/MovesFromD.jpg)
+
+The board has 15 holes I am labeling 'A' through 'O'. A 'move' is a series of 3 holes in a line. The diagram above
+shows all four moves that begin with hole 'D'. It is easy enough to enumerate all possible moves on the board. There
+are 36 different moves on the board:
+
+```java
+
+    //       A
+    //      B C
+    //     D E F
+    //    G H I J
+    //   K L M N O
+    
+    static final String [] MOVES = {
+        "ABD","ACF",
+        "BEI","BDG",
+        "CEH","CFJ",
+        "DBA","DEF","DHM","DGK",
+        "EIN","EHL",
+        "FCA","FED","FIM","FJO",
+        "GDB","GHI",
+        "HEC","HIJ",
+        "IHG","IEB",
+        "JFC","JIH",
+        "KGD","KLM",
+        "LHE","LMN",
+        "MLK","MHD","MIF","MNO",
+        "NML","NIE",
+        "ONM","OJF"
+    };
+    
+```
+
+## Starting Configuration
+
+The game begins with one empty hole. There are 15 different choices for the first empty hole, but they all
+collapse by mirroring or folding to one of these 4 possibilities:
+
+![](art/Starts.jpg)
+
+## All Possible Endings
+
+```
+        NUMBER OF PEGS LEFT:   1      2       3       4       5      6    7    8  9  10
+Starting empty A 568630 games [29760, 139614, 259578, 123664, 14844, 844, 324, 2, 0, 0]
+01: DBA,FED,ACF,GDB,JFC,LHE,MIF,BEI,CFJ,OJF,FIM,NML,KLM
+08: FCA,MIF,GHI,JIH,DHM,ABD
+
+Starting empty B 294543 games [14880, 70481, 133919, 65832, 8740, 522, 168, 1, 0, 0]
+01: GDB,ABD,IEB,BDG,KGD,LHE,CEH,JFC,NML,LHE,DEF,CFJ,OJF
+08: GDB,FED,NIE,BEI,MIF,KLM
+
+Starting empty D 1149568 games [85258, 290954, 510556, 233060, 27878, 1458, 404, 0, 0, 0]
+01: ABD,FCA,DEF,JFC,ACF,MHD,GDB,ONM,LMN,NIE,FED,BDG,KGD
+07: MHD,ONM,LMN,JIH,GHI,CEH,IHG
+
+Starting empty E 137846 games [1550, 20686, 62736, 46728, 5688, 374, 82, 0, 0, 2]
+01: LHE,JIH,BEI,CFJ,GDB,ABD,NML,DHM,LMN,OJF,FIM,NML,KLM
+10: NIE,BEI,LHE,IEB
+```
+
+
+
