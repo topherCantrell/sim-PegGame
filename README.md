@@ -53,11 +53,11 @@ and these are all essentially the same empty hole.
 
 Likewise, the outer middles are rotationally equivalent: 3, 5, and C. So are the inner holes 4, 7, and 8.
 
-In addition to rotating the board, you could play backwards (throgh a mirror). The remaining holes are thus equivalent:
+In addition to rotating the board, you could play backwards (through a mirror). The remaining holes are thus equivalent:
 1, 2, 6, 9, B, D.
 
-My simulation does not reduce the game space with mirroring and/or rotation. In my simulation, there are 14 possible starting 
-holes, and all games that start with 0 are different from all games that start with E (for instance).
+My simulation does not reduce the game space with mirroring or rotation. In my simulation, there are 14 possible starting 
+holes.
 
 ![](art/starts.jpg)
 
@@ -91,13 +91,13 @@ Nearly half the possible games end up with three pegs (3,302,124). About 22% of 
 22% with 4 pegs.
 
 There are 438,984 games that end in one peg. If you sat down at a board and picked a random starting hole and made
-random moves, you leave one peg about 6% of the time. 1 out of 17 games would be winners.
+random moves, you would leave one peg about 6% of the time. 1 out of 17 games would be winners.
 
-Note that there are no games that end with 9 pegs remaining. And the real challenge is not to leave 1 peg -- playing
-at random gets you that 6% of the time.
+Note that there are no games that end with 9 pegs remaining. No games end in more than 10 pegs remaining.
 
-The REAL challenge is play a game that leaves 10 pegs. There are only 6 games out the possible 7.3 million that end 
-with ten. The example game above ends up like this (dots are empty holes):
+And the real challenge is not to leave 1 peg -- playing at random gets you that 6% of the time. The REAL challenge 
+is to play a game that leaves 10 pegs. There are only 6 games out the possible 7.3 million that end with ten. 
+The example game above ends up like this (dots are empty holes):
 
 ```
     0
@@ -175,7 +175,6 @@ is not valid since we must have at least one peg. And board 327676 (all filled h
 start with one empty hole.
 
 TODO lots more here
-
 
 All possible 1-peg endings are covered (15 possible).
 TODO does 1-peg solutions include all last holes from all starting holes
