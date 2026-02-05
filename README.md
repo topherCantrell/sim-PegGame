@@ -56,7 +56,7 @@ Likewise, the outer middles are rotationally equivalent: 3, 5, and C. So are the
 In addition to rotating the board, you could play backwards (through a mirror). The remaining holes are thus equivalent:
 1, 2, 6, 9, B, D.
 
-My simulation does not reduce the game space with mirroring or rotation. In my simulation, there are 14 possible starting 
+My simulation does not reduce the game space with mirroring or rotation. In my simulation, there are 15 possible starting 
 holes.
 
 ![](art/starts.jpg)
