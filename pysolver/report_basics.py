@@ -1,6 +1,7 @@
 import pegs
 
 def print_stats(stats):
+    print("Overall Stats:")
     total_games = 0
     totals_per = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0}
     for _,counts in stats.items():
@@ -15,6 +16,7 @@ def print_stats(stats):
         print(f"    {pegs_left}    :  {tot}")
 
 def print_single_stats(stats, start_hole):
+    print("Single Start Hole Stats:")
     counts = stats[str(start_hole)]
     total_games = 0
     print(f"Start hole {start_hole:X}")
@@ -29,6 +31,7 @@ def print_single_stats(stats, start_hole):
 
 end_stats = pegs.load_basics()
 print_stats(end_stats)
+print()
 print_single_stats(end_stats, 0)
 print_single_stats(end_stats, 1)
 print_single_stats(end_stats, 3)

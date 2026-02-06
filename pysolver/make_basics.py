@@ -1,45 +1,35 @@
 import pegs
+import datetime
 
-"""make the basic stats and save to file
+"""make the basic stats and save them to afile
 
 Stats include:
     - for each starting hole, how many games end with N pegs left (N=1..10)
+    - an example game for each N pegs left
 """
 
-def end_of_game(brd, state, end_counts):    
-    count = brd.count(1)    
-    if count not in end_counts:
-        end_counts[count] = [1, state]
-    else:
-        end_counts[count][0] += 1
-
-def solve_board(board, end_counts, state):    
-    made_move = False
-    for mv in pegs.MOVES:
-        if board[mv[0]] == 1 and board[mv[1]] == 1 and board[mv[2]] == 0:
-            new_board = board[:]
-            new_board[mv[0]] = 0
-            new_board[mv[1]] = 0
-            new_board[mv[2]] = 1           
-            mrep = f":{mv[0]:X}{mv[2]:X}"            
-            new_state = state + mrep
-            solve_board(new_board, end_counts, new_state)
-            made_move = True
-    if not made_move:
-        end_of_game(board, state, end_counts)
-
 def solve_all_boards():
-    end_stats = {}
+    total = 0
+    before = datetime.datetime.now()
+    ret = {}
     for start_hole in range(15):
-        print(f"Start hole {start_hole:X}")        
-        b = [1]*15
-        b[start_hole] = 0        
-        s = {}
-        state = f"{start_hole:X}"
-        # pegs.repr_board(b)
-        solve_board(b, s,state)
-        end_stats[start_hole] = s
-    return end_stats
+        print(f"Start hole {start_hole:X}")
+        end_stats = {}
+        for board, state, end in pegs.game_board_generator(start_hole):
+            total += 1
+            if end:
+                count = board.count(1)    
+                if count not in end_stats:
+                    end_stats[count] = [1, state]
+                else:
+                    end_stats[count][0] += 1
+        ret[start_hole] = end_stats 
+    after = datetime.datetime.now()
+    print(f"Solved all boards in {after-before}")   
+    print("Total states",total)
+    return ret
 
 stats = solve_all_boards()
 pegs.save_basics(stats)
+
+

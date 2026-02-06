@@ -1,5 +1,4 @@
 import json
-import random
 
 #    Hex
 #     0
@@ -27,19 +26,59 @@ MOVES = [
     [14, 13, 12], [14, 9, 5]
 ]
 
+def save_basics(end_stats):
+    """save the basic stats to a file"""
+    with open("end_stats.json", "w") as f:
+        json.dump(end_stats, f, indent=4)
+
+def load_basics():    
+    """load the basic stats from a file"""
+    with open("end_stats.json", "r") as f:
+        end_stats = json.load(f)
+    return end_stats
+
+def save_board_hits(hit_boards):
+    """save the board hits to a file"""
+    with open("hit_boards.json", "w") as f:
+        json.dump(hit_boards, f, indent=4)
+
+def load_board_hits():    
+    """load the board hits from a file"""
+    with open("hit_boards.json", "r") as f:
+        hit_boards = json.load(f)
+    return hit_boards
+
 def get_board_number_from_board(board):
+    """get the board number (int) from the board state
+    Args:
+        board: list of 15 ints (0/1) representing the board state
+    Returns:
+        int: board number
+    """
     s = ''
     for v in board:
         s = str(v) + s
     return int(s,2)
 
 def get_board_from_board_number(num):
+    """get the board state from the board number (int)
+    Args:
+        num: int board number
+    Returns:
+        list of 15 ints (0/1) representing the board state
+    """
     s = bin(num)[2:]
     s = s.rjust(15,'0')
     board = [int(c) for c in s[::-1]]
     return board
 
 def get_board_from_visual(s):
+    """get the board state from the visual string representation
+    Args:
+        s: str visual representation of the board
+    Returns:
+        list of 15 ints (0/1) representing the board state
+    """
     s = s.replace('\n','').replace(' ','')
     ret = []
     for c in s:
@@ -49,7 +88,25 @@ def get_board_from_visual(s):
             ret.append(1)    
     return ret
 
+def has_moves(board):
+    """check if there are any valid moves left on the board
+
+    Args:
+        board: list of 15 ints (0/1) representing the board state
+    Returns:
+        True if there are valid moves, False otherwise
+    """
+    for mv in MOVES:
+        if board[mv[0]] == 1 and board[mv[1]] == 1 and board[mv[2]] == 0:
+            return True
+    return False
+
 def print_boards(boards):
+    """print multiple boards side by side
+    
+    Args:
+        boards: list of int board numbers
+    """
     while boards:
         to_run = boards[:7]
         bds = []
@@ -65,6 +122,14 @@ def print_boards(boards):
         boards = boards[7:]
 
 def repr_board(board,value=None):
+    """get the visual string representation of a board
+
+    Args:
+        board: list of 15 ints (0/1) representing the board state
+        value: optional int to show as the board number
+    Returns:
+        str: visual representation of the board
+    """
     v = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E']
     for i in range(15):
         if board[i]==0:
@@ -83,51 +148,41 @@ def repr_board(board,value=None):
     g+=bn[:9]    
     return g
 
+def _solve_board(board, state):    
+    """generate all possible game states from the given game state
 
-def save_basics(end_stats):
-    with open("end_stats.json", "w") as f:
-        json.dump(end_stats, f, indent=4)
+    This is a private recursive helper.
 
-def load_basics():    
-    with open("end_stats.json", "r") as f:
-        end_stats = json.load(f)
-    return end_stats
-
-def save_board_hits(hit_boards):
-    with open("hit_boards.json", "w") as f:
-        json.dump(hit_boards, f, indent=4)
-
-def load_board_hits():    
-    with open("hit_boards.json", "r") as f:
-        hit_boards = json.load(f)
-    return hit_boards
-
-def board_to_game_number(board):
-    s = ''
-    for v in board:
-        s = str(v) + s
-    return int(s,2)
-
-def has_moves(board):
+    Args:
+        board: list of 15 ints (0/1) representing the board state
+        state: string representing the moves made so far
+    Yields:
+        (board, state, is_end): board is the current board state,
+            state is the move history, is_end is True if no moves possible
+    """
+    made_move = False
     for mv in MOVES:
         if board[mv[0]] == 1 and board[mv[1]] == 1 and board[mv[2]] == 0:
-            return True
-    return False
+            new_board = board[:]
+            new_board[mv[0]] = 0
+            new_board[mv[1]] = 0
+            new_board[mv[2]] = 1           
+            mrep = f":{mv[0]:X}{mv[2]:X}"            
+            new_state = state + mrep
+            made_move = True
+            yield from _solve_board(new_board, new_state)
+    yield board, state, not made_move
 
-if __name__ == "__main__":
-    brd = """
-      X
-     . .
-    . . .
-   . . . .
-  X . . . X
-"""
-    board = get_board_from_visual(brd)
-    print(board)
-    print_board(board)
-    print("Board number:", board_to_game_number(board))
-    
-    b = get_board_from_board_number(1024)
-    print_board(b)
+def game_board_generator(start_hole):
+    """generate all possible game states from a given starting hole
 
-    
+    Args:
+        start_hole: int (0..14) representing the hole to start with empty
+    Yields:
+        (board, state, is_end): board is the current board state,
+            state is the move history, is_end is True if no moves possible
+    """
+    b = [1]*15
+    b[start_hole] = 0        
+    state = f"{start_hole:X}"    
+    yield from _solve_board(b, state)
