@@ -237,7 +237,7 @@ Several boards are only reached by one sequence of moves. These include the 1-ho
 that the only way you get to board 16,383 (see below) is at the start a game with no peg in hole E -- before you
 make any moves.
 
-And there boards like 13,542 that you can only get to with one starting sequence. In the case of 13,542, the
+And there are boards like 13,542 that you can only get to with one starting sequence. In the case of 13,542, the
 only way to get to the board is with the moves: "C:EC:BD:5C:05:92:35". This board isn't an ending board; many games
 continue on from this point, including the 1-hole winning game: "C:EC:BD:5C:05:92:35:::A3:16:29:68:97:DB:B4".
 
@@ -257,8 +257,8 @@ There are 15 possible 14-peg boards that you can make. All of them are reached (
 
 # Unreachable Interesting Patterns
 
-Let's look at some cool visual patterns that are not reachable. These are not necessarily final games. A player will
-never find the board in one of these configurations during normal play.
+Let's look at some cool visual patterns that are not reachable. These are not necessarily final games. But you will
+never see one of these board configurations during normal play.
 
 There are 105 possible 2-peg boards that you can make. 36 of these cannot be reached in game play. Here are a few 
 interesting ones:
