@@ -96,6 +96,16 @@ Nearly half the possible games end up with three pegs (3,302,124). About 1/4th o
 There are 438,984 games that end in one peg. If you played at random, you would leave one peg about 6% of the time. 
 That means 1 out of 17 random games would be winners.
 
+Here is an example winning game play "0:30:53:05:61:92:B4:C5:18:29:E5:5C:DB:AC":
+
+```
+    *    |    +    |    0    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .    |    .
+   1 +   |   . +   |   . 2   |   * .   |   + *   |   + +   |   + +   |   1 +   |   . 2   |   . .   |   . .   |   . .   |   . .   |   . .
+  3 + +  |  * 4 5  |  + . *  |  3 . +  |  . . 5  |  . * .  |  . + *  |  . 4 +  |  . . 5  |  . . *  |  . . 5  |  . . .  |  . . .  |  . . .
+ + + + + | + + + + | + + + + | 6 + + + | . + + 9 | . 7 + . | . . 8 . | . . * . | . . + * | . . + 9 | . . 8 . | . . . . | . . . . | . . . .
++ + + + +|+ + + + +|+ + + + +|+ + + + +|+ + + + +|+ B + + +|+ . C + +|+ . . + +|+ . . + +|+ . . + E|+ . * + .|+ * C D .|A B * . .|. . C . .
+```
+
 Note that there are no games that end with 9 pegs remaining. No games end in more than 10 pegs remaining.
 
 The instructions on the game say the challenge is to leave 1 peg. But the REAL challenge is to play a game that 
@@ -111,7 +121,17 @@ The example game above ends up as shown here (dots are empty holes):
 A . C . E
 ```
 
-Below are the statistics for each starting hole. I considered rotation and mirroring here to reduce the size of the
+Here is an example leave-10 game play "4:B4:27:D4:72" ending in the board above:
+
+```
+    +    |    +    |    +    |    +    |    0
+   + +   |   + 2   |   + .   |   + *   |   1 2
+  + * +  |  + 4 +  |  + * +  |  + 4 +  |  3 . 5
+ + 7 + + | + * + + | + + 8 + | + 7 . + | 6 . . 9
++ B + + +|+ . + + +|+ . + D +|+ . + . +|A . C . E
+```
+
+Statistics for each starting hole are shown below. I considered rotation and mirroring here to reduce the size of the
 data.
 
 All games that end with 10 pegs require the start hole to be in the middle (4, 7, or 8).
@@ -171,17 +191,18 @@ Confirming that rotations add up to total games:
 
 # Board Configurations
 
-That example game above leaves a cool pattern. 
+That example game above leaves a cool pattern (on left below). 
 
 ```
-    0             0
-   1 2           1 2
-  3 . 5         3 . 5
- 6 . . 9       6 . . 9
-A . C . E     A . . . E
+    0               0
+   1 2             1 2
+  3 . 5           3 . 5
+ 6 . . 9         6 . . 9
+A . C . E       A . . . E
+  Valid       Not Reachable
 ```
 
-It would be cooler still if the "C" hole were empty too (that second picture above). But that would leave 9 pegs, 
+It would be cooler still if the "C" hole were empty too (on right above). But that would leave 9 pegs, 
 and we know there is no game that ends in 9 pegs. 
 
 What other cool patterns not reachable in regulation game play?
@@ -190,7 +211,7 @@ You can think of the board as a 15-bit binary number with each bit representing 
 possible states the board could be in. We can refer to a board configuration by its binary-to-decimal number. 
 
 The peg numbers will represent bit numbers. The first board above is 101011001101111 = 22,127. This board is reachable
-by exactly 2 games: ???TODO???
+by exactly 2 games: "4:B4:27:D4:72" and "4:D4:18:B4:81".
 
 The second board above is 100011001101111 = 18,031. No game ends up in this state.
 

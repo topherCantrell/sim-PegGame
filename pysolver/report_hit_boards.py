@@ -46,11 +46,31 @@ def print_stats_for_board(board_num):
     print(f"Board {board_num} hit {total_hits} times. Example game: {example_state}")
     db = pegs.get_board_from_board_number(int(board_num))    
     r = pegs.repr_board(db)
-    print(r)         
+    print(r)
+
+def find_all_rem_10_games():
+    """find all games that hit a specific board number"""
+    print("Finding all games that end with 10 pegs remaining:")
+    for start_hole in range(15):
+        print(f"Start hole {start_hole:X}")
+        for board, state, is_end in pegs.game_board_generator(start_hole):
+            if not is_end:
+                continue
+            if board.count(1) != 10:
+                continue
+            print(f"  Rem-10 game: {state}")
 
 print_per_start_hole_stats()
 print()
 print_board_totals()
+print()
+
+#find_all_rem_10_games()
+print("Example winning play")
+pegs.print_game_play("0:30:53:05:61:92:B4:C5:18:29:E5:5C:DB:AC")
+
+print("Example leave-10 play")
+pegs.print_game_play("4:B4:27:D4:72")
 
 # In case you are looking for a particular board:
 

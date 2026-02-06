@@ -148,6 +148,56 @@ def repr_board(board,value=None):
     g+=bn[:9]    
     return g
 
+def find_move(m):
+    for move in MOVES:
+        if move[0] == int(m[0], 16) and move[2] == int(m[1], 16):
+            return move
+    return None
+
+def print_game_play(game):
+    board = [1]*15
+    board[int(game[0], 16)] = 0
+    seq = [board[:]]
+    moves = []
+    game = game[2:]
+    game = game.split(':')
+    for g in game:
+        move = find_move(g)
+        moves.append(move)
+        board[move[0]] = 0
+        board[move[1]] = 0
+        board[move[2]] = 1
+        seq.append(board[:])
+    moves.append(None)  # No move on the last board
+    print_rows = ["", "", "", "", ""]
+    for i in range(len(seq)):
+        brd = seq[i]
+        mv = moves[i]
+        if mv:
+            for j in range(15):
+                if brd[j]:
+                    brd[j] = '+'
+                else:
+                    brd[j] = '.'
+            brd[mv[0]] = hex(mv[0])[2].upper()
+            brd[mv[1]] = hex(mv[1])[2].upper()
+            brd[mv[2]] = '*'
+        else:
+            for j in range(15):
+                if brd[j]:
+                    brd[j] = hex(j)[2].upper()
+                else:
+                    brd[j] = '.'
+        print_rows[0] += "    "+brd[0]+"    |"
+        print_rows[1] += "   "+brd[1]+" "+brd[2]+"   |"
+        print_rows[2] += "  "+brd[3]+" "+brd[4]+" "+brd[5]+"  |"
+        print_rows[3] += " "+brd[6]+" "+brd[7]+" "+brd[8]+" "+brd[9]+" |"
+        print_rows[4] += brd[10]+" "+brd[11]+" "+brd[12]+" "+brd[13]+" "+brd[14]+"|"
+    for i in range(len(print_rows)):
+        print_rows[i] = print_rows[i][:-1]
+
+    print('\n'.join(print_rows))
+
 def _solve_board(board, state):    
     """generate all possible game states from the given game state
 
