@@ -1,7 +1,7 @@
 # Peg Game
 
 What are the holidays without breakfast at Cracker Barrel? And while you are sitting there in awkward silence with
-extended family, what better way to pass the time than with that triangle of wood filled with golf tees.
+extended family, what better way to pass the time than with that wooden triangle filled with golf tees.
 
 ![](art/game.jpg)
 
