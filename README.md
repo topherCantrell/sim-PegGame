@@ -5,10 +5,12 @@ extended family, what better way to pass the time than with that wooden triangle
 
 ![](art/game.jpg)
 
-# The Model
+# The Board and Moves
 
 I modeled the board as 15 holes numbered in hexadecimal from 0 to E. Hole 0 is the top most hole, then left to right 
 and top to bottom as you can see in the photo and here:
+
+![](test.svg)
 
 ```
     0
