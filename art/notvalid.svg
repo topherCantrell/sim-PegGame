@@ -1,0 +1,359 @@
+<svg height="162.5" width="325.0" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+    <!-- A marker to be used as an arrowhead -->
+    <marker id="arrow" viewBox="0 0 5 5" refX="2.5" refY="2.5" markerWidth="5" markerHeight="5" fill="green" orient="auto-start-reverse">
+      <path d="M 0 0 L 5 2.5 L 0 5 z" />
+    </marker>
+  </defs>    
+
+  <!-- COPY_BEGIN --><!-- COPY_END -->
+  
+  <g transform="translate(0,0) scale(0.25)">
+    <!-- board is 650x650 at scale 1-->
+    <!-- board is 325x325 at scale 0.5-->    
+    <polygon points="250,86.6 40,427 460,427" style="fill:#F8E4D5;stroke:black;stroke-width:1" transform="translate(-50,-125) scale(1.50)"/>
+    <g transform="translate(75,25)">
+    <text x="250" y="580" style="font-family: Arial; font-size: 75px; fill: black; text-anchor:middle">Valid</text>
+        <circle r="30" cx="250" cy="86.6" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="237" y="103.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">0</text>      
+        <circle r="30" cx="200" cy="173.3" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="185" y="189.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">1</text>
+        <circle r="30" cx="300" cy="173.3" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="287" y="189.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">2</text>
+        <circle r="30" cx="150" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="137" y="275" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">3</text>
+        <circle r="30" cx="250" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="235" y="275.8" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">4</text>
+        <circle r="30" cx="350" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="336" y="277.8" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">5</text>
+        <circle r="30" cx="100" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="85" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">6</text>
+        <circle r="30" cx="200" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="185" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">7</text>
+        <circle r="30" cx="300" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="285" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">8</text>
+        <circle r="30" cx="400" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="385" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">9</text>
+        <circle r="30" cx="50" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="33" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">A</text>
+        <circle r="30" cx="150" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="135" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">B</text>
+        <circle r="30" cx="250" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="233" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">C</text>
+        <circle r="30" cx="350" cy="433" fill="white" stroke="black" stroke-width="1"/>       
+        <text x="335" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">D</text>
+        <circle r="30" cx="450" cy="433" fill="white" stroke="black" stroke-width="1"/>       
+        <text x="435" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">E</text>
+
+        <!-- empty 0
+        <circle r="30" cx="250" cy="86.6" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 1
+        <circle r="30" cx="200" cy="173.3" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 2
+        <circle r="30" cx="300" cy="173.3" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 3
+        <circle r="30" cx="150" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 4 -->
+        <circle r="30" cx="250" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 5
+        <circle r="30" cx="350" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 6
+        <circle r="30" cx="100" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 7 -->
+        <circle r="30" cx="200" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 8 -->
+        <circle r="30" cx="300" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 9
+        <circle r="30" cx="400" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty A
+        <circle r="30" cx="50" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty B -->
+        <circle r="30" cx="150" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty C
+        <circle r="30" cx="250" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty D -->
+        <circle r="30" cx="350" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty E
+        <circle r="30" cx="450" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+
+        <!-- peg 0 --> 
+        <circle r="30" cx="250" cy="86.6" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 1 -->
+        <circle r="30" cx="200" cy="173.3" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 2 -->
+        <circle r="30" cx="300" cy="173.3" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 3 -->
+        <circle r="30" cx="150" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 4
+        <circle r="30" cx="250" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 5 -->
+        <circle r="30" cx="350" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 6 -->
+        <circle r="30" cx="100" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 7
+        <circle r="30" cx="200" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 8
+        <circle r="30" cx="300" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 9 -->
+        <circle r="30" cx="400" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg A -->
+        <circle r="30" cx="50" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg B
+        <circle r="30" cx="150" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg C -->
+        <circle r="30" cx="250" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg D
+        <circle r="30" cx="350" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg E -->
+        <circle r="30" cx="450" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        
+        <!-- move 013
+        <line x1="250" y1="86.6" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 025
+        <line x1="250" y1="86.6" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 148
+        <line x1="200" y1="173.3" x2="300" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 136
+        <line x1="200" y1="173.3" x2="100" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 247
+        <line x1="300" y1="173.3" x2="200" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 259
+        <line x1="300" y1="173.3" x2="400" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 310
+        <line x1="150" y1="259.8" x2="250" y2="86.6" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 345
+        <line x1="150" y1="259.8" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 37C
+        <line x1="150" y1="259.8" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 36A
+        <line x1="150" y1="259.8" x2="50" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 48D
+        <line x1="250" y1="259.8" x2="350" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 47B
+        <line x1="250" y1="259.8" x2="150" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 520
+        <line x1="350" y1="259.8" x2="250" y2="86.6" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 543
+        <line x1="350" y1="259.8" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 58C
+        <line x1="350" y1="259.8" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 59E
+        <line x1="350" y1="259.8" x2="450" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 631
+        <line x1="100" y1="346.4" x2="200" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 678
+        <line x1="100" y1="346.4" x2="300" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 742
+        <line x1="200" y1="346.4" x2="300" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 789
+        <line x1="200" y1="346.4" x2="400" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 876
+        <line x1="300" y1="346.4" x2="100" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 841
+        <line x1="300" y1="346.4" x2="200" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 952
+        <line x1="400" y1="346.4" x2="300" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 987
+        <line x1="400" y1="346.4" x2="200" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move A63
+        <line x1="50" y1="433" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move ABC
+        <line x1="50" y1="433" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move B74
+        <line x1="150" y1="433" x2="250" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move BCD
+        <line x1="150" y1="433" x2="350" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move CBA
+        <line x1="250" y1="433" x2="50" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move C73
+        <line x1="250" y1="433" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move C85
+        <line x1="250" y1="433" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move CDE
+        <line x1="250" y1="433" x2="450" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move DCB
+        <line x1="350" y1="433" x2="150" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move D84
+        <line x1="350" y1="433" x2="250" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move EDC
+        <line x1="450" y1="433" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move E95
+        <line x1="450" y1="433" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+    </g>
+  </g>
+<g transform="translate(162.5,0) scale(0.25)">
+    <!-- board is 650x650 at scale 1-->
+    <!-- board is 325x325 at scale 0.5-->    
+    <polygon points="250,86.6 40,427 460,427" style="fill:#F8E4D5;stroke:black;stroke-width:1" transform="translate(-50,-125) scale(1.50)"/>
+    <g transform="translate(75,25)">
+    <text x="250" y="580" style="font-family: Arial; font-size: 75px; fill: black; text-anchor:middle">Not Valid</text>
+        <circle r="30" cx="250" cy="86.6" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="237" y="103.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">0</text>      
+        <circle r="30" cx="200" cy="173.3" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="185" y="189.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">1</text>
+        <circle r="30" cx="300" cy="173.3" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="287" y="189.6" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">2</text>
+        <circle r="30" cx="150" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="137" y="275" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">3</text>
+        <circle r="30" cx="250" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="235" y="275.8" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">4</text>
+        <circle r="30" cx="350" cy="259.8" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="336" y="277.8" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">5</text>
+        <circle r="30" cx="100" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="85" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">6</text>
+        <circle r="30" cx="200" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="185" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">7</text>
+        <circle r="30" cx="300" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="285" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">8</text>
+        <circle r="30" cx="400" cy="346.4" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="385" y="362.4" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">9</text>
+        <circle r="30" cx="50" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="33" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">A</text>
+        <circle r="30" cx="150" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="135" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">B</text>
+        <circle r="30" cx="250" cy="433" fill="white" stroke="black" stroke-width="1"/>        
+        <text x="233" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">C</text>
+        <circle r="30" cx="350" cy="433" fill="white" stroke="black" stroke-width="1"/>       
+        <text x="335" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">D</text>
+        <circle r="30" cx="450" cy="433" fill="white" stroke="black" stroke-width="1"/>       
+        <text x="435" y="449" style="font-family: Arial; font-size: 50px; fill: black; font-weight: bold">E</text>
+
+        <!-- empty 0
+        <circle r="30" cx="250" cy="86.6" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 1
+        <circle r="30" cx="200" cy="173.3" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 2
+        <circle r="30" cx="300" cy="173.3" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 3
+        <circle r="30" cx="150" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 4 -->
+        <circle r="30" cx="250" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 5
+        <circle r="30" cx="350" cy="259.8" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 6
+        <circle r="30" cx="100" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty 7 -->
+        <circle r="30" cx="200" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 8 -->
+        <circle r="30" cx="300" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty 9
+        <circle r="30" cx="400" cy="346.4" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty A
+        <circle r="30" cx="50" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+        <!-- empty B -->
+        <circle r="30" cx="150" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty C -->
+        <circle r="30" cx="250" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty D -->
+        <circle r="30" cx="350" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> 
+        <!-- empty E
+        <circle r="30" cx="450" cy="433" fill="white" stroke="black" stroke-width="1" fill-opacity="0.95"/> -->
+
+        <!-- peg 0 --> 
+        <circle r="30" cx="250" cy="86.6" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 1 -->
+        <circle r="30" cx="200" cy="173.3" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 2 -->
+        <circle r="30" cx="300" cy="173.3" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 3 -->
+        <circle r="30" cx="150" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 4
+        <circle r="30" cx="250" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 5 -->
+        <circle r="30" cx="350" cy="259.8" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 6 -->
+        <circle r="30" cx="100" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg 7
+        <circle r="30" cx="200" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 8
+        <circle r="30" cx="300" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg 9 -->
+        <circle r="30" cx="400" cy="346.4" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg A -->
+        <circle r="30" cx="50" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        <!-- peg B
+        <circle r="30" cx="150" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg C
+        <circle r="30" cx="250" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg D
+        <circle r="30" cx="350" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> -->
+        <!-- peg E -->
+        <circle r="30" cx="450" cy="433" fill="blue" stroke="black" stroke-width="1" fill-opacity="0.75"/> 
+        
+        <!-- move 013
+        <line x1="250" y1="86.6" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 025
+        <line x1="250" y1="86.6" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 148
+        <line x1="200" y1="173.3" x2="300" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 136
+        <line x1="200" y1="173.3" x2="100" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 247
+        <line x1="300" y1="173.3" x2="200" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 259
+        <line x1="300" y1="173.3" x2="400" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 310
+        <line x1="150" y1="259.8" x2="250" y2="86.6" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 345
+        <line x1="150" y1="259.8" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 37C
+        <line x1="150" y1="259.8" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 36A
+        <line x1="150" y1="259.8" x2="50" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 48D
+        <line x1="250" y1="259.8" x2="350" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 47B
+        <line x1="250" y1="259.8" x2="150" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 520
+        <line x1="350" y1="259.8" x2="250" y2="86.6" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 543
+        <line x1="350" y1="259.8" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 58C
+        <line x1="350" y1="259.8" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 59E
+        <line x1="350" y1="259.8" x2="450" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 631
+        <line x1="100" y1="346.4" x2="200" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 678
+        <line x1="100" y1="346.4" x2="300" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 742
+        <line x1="200" y1="346.4" x2="300" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 789
+        <line x1="200" y1="346.4" x2="400" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 876
+        <line x1="300" y1="346.4" x2="100" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 841
+        <line x1="300" y1="346.4" x2="200" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 952
+        <line x1="400" y1="346.4" x2="300" y2="173.3" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move 987
+        <line x1="400" y1="346.4" x2="200" y2="346.4" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move A63
+        <line x1="50" y1="433" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move ABC
+        <line x1="50" y1="433" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move B74
+        <line x1="150" y1="433" x2="250" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move BCD
+        <line x1="150" y1="433" x2="350" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move CBA
+        <line x1="250" y1="433" x2="50" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move C73
+        <line x1="250" y1="433" x2="150" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move C85
+        <line x1="250" y1="433" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move CDE
+        <line x1="250" y1="433" x2="450" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move DCB
+        <line x1="350" y1="433" x2="150" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move D84
+        <line x1="350" y1="433" x2="250" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move EDC
+        <line x1="450" y1="433" x2="250" y2="433" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+        <!-- move E95
+        <line x1="450" y1="433" x2="350" y2="259.8" stroke="green" stroke-width="8" marker-end="url(#arrow)"/> -->
+    </g>
+  </g>
+  
+</svg>

@@ -1,4 +1,5 @@
 import json
+from pysolver.svg_maker import SVGMaker
 
 #    Hex
 #     0
@@ -101,13 +102,31 @@ def has_moves(board):
             return True
     return False
 
-def print_boards(boards):
+def print_boards(boards, filename, labels=None):
     """print multiple boards side by side
     
     Args:
         boards: list of int board numbers
     """
-    while boards:
+    svg = SVGMaker()
+    svg_boards = []
+    pos = 0
+    for brd in boards:
+        board = get_board_from_board_number(brd)
+        sbrd = svg.make_board()
+        if labels:
+            sbrd.set_text(labels[pos])
+            pos += 1
+        else:
+            sbrd.set_text(str(brd))
+        for i in range(15):
+            if board[i]:
+                sbrd.set_peg(f"{i:X}")
+            else:
+                sbrd.set_peg(f"{i:X}", False)
+        svg_boards.append(sbrd)
+    svg.make_svg(filename, svg_boards, 0.5)
+    while boards:        
         to_run = boards[:7]
         bds = []
         for board in to_run:
@@ -154,7 +173,9 @@ def find_move(m):
             return move
     return None
 
-def print_game_play(game):
+def print_game_play(game, filename=None):
+    svg = SVGMaker()
+    svg_boards = []
     board = [1]*15
     board[int(game[0], 16)] = 0
     seq = [board[:]]
@@ -162,13 +183,31 @@ def print_game_play(game):
     game = game[2:]
     game = game.split(':')
     for g in game:
+        sbrd = svg.make_board()
+        for i in range(15):
+            if board[i]:
+                sbrd.set_peg(f"{i:X}")
+            else:
+                sbrd.set_peg(f"{i:X}", False)
         move = find_move(g)
+        smove = f"{move[0]:X}{move[1]:X}{move[2]:X}"
+        sbrd.set_move(smove)
+        sbrd.set_text('')
         moves.append(move)
         board[move[0]] = 0
         board[move[1]] = 0
         board[move[2]] = 1
         seq.append(board[:])
+        svg_boards.append(sbrd)
     moves.append(None)  # No move on the last board
+    sbrd = svg.make_board()
+    sbrd.set_text('')
+    for i in range(15):
+        if board[i]:
+            sbrd.set_peg(f"{i:X}")
+        else:
+            sbrd.set_peg(f"{i:X}", False)
+    svg_boards.append(sbrd)
     print_rows = ["", "", "", "", ""]
     for i in range(len(seq)):
         brd = seq[i]
@@ -196,6 +235,7 @@ def print_game_play(game):
     for i in range(len(print_rows)):
         print_rows[i] = print_rows[i][:-1]
 
+    svg.make_svg(filename, svg_boards, 0.5)
     print('\n'.join(print_rows))
 
 def _solve_board(board, state):    
@@ -236,3 +276,28 @@ def game_board_generator(start_hole):
     b[start_hole] = 0        
     state = f"{start_hole:X}"    
     yield from _solve_board(b, state)
+
+if __name__ == '__main__':
+    #print_game_play("0:30:53:05:61:92:B4:C5:18:29:E5:5C:DB:AC",'test.svg')
+    
+    #print_boards([0b0101011001101111], 'test.svg')
+    #print_game_play("4:B4:27:D4:72",'test.svg')
+
+    #print_boards([0b0101011001101111,0b0100011001101111], 'test.svg',['Valid','Not Valid'])
+
+    #print_boards([40,4104,4128],'test.svg')
+
+    #print_boards([16383,13542],'onehit.svg')
+
+    # print_boards([17,         384,         576,         4097,        4112,        130],'pegs2.svg')
+    print_boards([7,           11,          22,          56,         385,        21504,        3073, 4102,        4136,        7168,       10241,       14336],'pegs3.svg')
+    print_boards([960,        10816,       27648,        401],'pegs4.svg')
+    print_boards([4497,        346,         391,         598,        12932,       14353],'pegs5.svg')
+    print_boards([31745,       31760,       28224,       14736],'pegs6.svg')
+    print_boards([32128,       31616,       31750,       27670],'pegs7.svg')
+    print_boards([32321,       32336,       31785],'pegs8.svg')
+    print_boards([32704,       32360,       32145,       31767],'pegs9.svg')
+    print_boards([31806,       31791],'pegs10.svg')
+    print_boards([32598,       32185],'pegs11.svg')
+    print_boards([32367,       32382,       32190,       28665],'pegs12.svg')
+    print_boards([32750,       32727,       28655],'pegs13.svg')
